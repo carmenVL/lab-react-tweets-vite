@@ -1,6 +1,10 @@
+// src/App.jsx
+
+import React from "react";
 import "./App.css";
 import Tweet from "./components/Tweet";
 
+// Definimos el arreglo de tweets
 const tweetsArray = [
   {
     user: {
@@ -40,7 +44,10 @@ const tweetsArray = [
 function App() {
   return (
     <div className="App">
-      <Tweet />
+      {/* Usamos map() para renderizar múltiples Tweets */}
+      {tweetsArray.map((tweet, index) => (
+        <Tweet key={index} tweet={tweet} />
+      ))}
     </div>
   );
 }
